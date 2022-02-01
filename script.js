@@ -25,9 +25,9 @@ createList();
 function createList() {
   [...richestPeople];
 
-  // shuffle the richestPeople array
+  // random sorting richestPeople array
   const shuffleArray = [...richestPeople].sort(() => 0.5 - Math.random());
-  
+
   shuffleArray.forEach((person, index) => {
     const listItem = document.createElement("li");
 
@@ -44,5 +44,43 @@ function createList() {
     listItems.push(listItem);
 
     draggable_list.appendChild(listItem);
+  });
+
+  addEventListener();
+}
+
+function dragStart() {
+  // console.log("Event: ", "dragstart");
+}
+
+function dragEnter() {
+  // console.log("Event: ", "dragenter");
+}
+
+function dragLeave() {
+  // console.log("Event: ", "dragleave");
+}
+
+function dragOver() {
+  // console.log("Event: ", "dragover");
+}
+
+function dragDrop() {
+  // console.log("Event: ", "drag");
+}
+
+function addEventListener() {
+  const draggables = document.querySelectorAll(".draggable");
+  const dragListItems = document.querySelectorAll(".draggable-list li");
+
+  draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", dragStart);
+  });
+
+  dragListItems.forEach((item) => {
+    item.addEventListener("dragover", dragOver);
+    item.addEventListener("drop", dragDrop);
+    item.addEventListener("dragenter", dragEnter);
+    item.addEventListener("dragleave", dragLeave);
   });
 }
