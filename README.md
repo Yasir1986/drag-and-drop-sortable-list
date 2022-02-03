@@ -7,3 +7,7 @@ Follow the steps to run this Darg and Drop sortable list
 2)double click on index.html
 
 :)
+
+OR
+
+live deploy link: https://optimistic-lamarr-f1708d.netlify.app/
